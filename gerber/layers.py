@@ -31,13 +31,13 @@ hints = [
          ext=['gtl', 'cmp', 'top', ],
          name=['art01', 'top', 'GTL', 'layer1', 'soldcom', 'comp', 'F.Cu', ],
          regex='',
-         content=[]
+         content=['INTop Copper*']
          ),
     Hint(layer='bottom',
          ext=['gbl', 'sld', 'bot', 'sol', 'bottom', ],
          name=['art02', 'bottom', 'bot', 'GBL', 'layer2', 'soldsold', 'B.Cu', ],
          regex='',
-         content=[]
+         content=['INBottom Copper*']
          ),
     Hint(layer='internal',
          ext=['in', 'gt1', 'gt2', 'gt3', 'gt4', 'gt5', 'gt6',
@@ -47,51 +47,51 @@ hints = [
                'In1.Cu', 'In2.Cu', 'In3.Cu', 'In4.Cu',
                'group3', 'group4', 'group5', 'group6', 'group7', 'group8', ],
          regex='',
-         content=[]
+         content=['INCopper Layer 2*','INCopper Layer 15*']
          ),
     Hint(layer='topsilk',
          ext=['gto', 'sst', 'plc', 'ts', 'skt', 'topsilk', ],
          name=['sst01', 'topsilk', 'silk', 'slk', 'sst', 'F.SilkS'],
          regex='',
-         content=[]
+         content=['INSilkscreen Top*']
          ),
     Hint(layer='bottomsilk',
          ext=['gbo', 'ssb', 'pls', 'bs', 'skb', 'bottomsilk', ],
          name=['bsilk', 'ssb', 'botsilk', 'bottomsilk', 'B.SilkS'],
          regex='',
-         content=[]
+         content=['INSilkscreen Bottom*']
          ),
     Hint(layer='topmask',
          ext=['gts', 'stc', 'tmk', 'smt', 'tr', 'topmask', ],
          name=['sm01', 'cmask', 'tmask', 'mask1', 'maskcom', 'topmask',
                'mst', 'F.Mask', ],
          regex='',
-         content=[]
+         content=['INSoldermask Top*']
          ),
     Hint(layer='bottommask',
          ext=['gbs', 'sts', 'bmk', 'smb', 'br', 'bottommask', ],
          name=['sm', 'bmask', 'mask2', 'masksold', 'botmask', 'bottommask',
                'msb', 'B.Mask', ],
          regex='',
-         content=[]
+         content=['INSoldermask Bottom*']
          ),
     Hint(layer='toppaste',
          ext=['gtp', 'tm', 'toppaste', ],
          name=['sp01', 'toppaste', 'pst', 'F.Paste'],
          regex='',
-         content=[]
+         content=['INSolderpaste Top*']
          ),
     Hint(layer='bottompaste',
          ext=['gbp', 'bm', 'bottompaste', ],
          name=['sp02', 'botpaste', 'bottompaste', 'psb', 'B.Paste', ],
          regex='',
-         content=[]
+         content=['INSolderpaste Bottom*']
          ),
     Hint(layer='outline',
          ext=['gko', 'outline', ],
          name=['BDR', 'border', 'out', 'outline', 'Edge.Cuts', ],
          regex='',
-         content=[]
+         content=['IN*']
          ),
     Hint(layer='ipc_netlist',
          ext=['ipc'],
@@ -145,6 +145,7 @@ def guess_layer_class(filename):
                 return hint.layer
     except:
         pass
+
     return 'unknown'
 
 
